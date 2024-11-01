@@ -1,3 +1,10 @@
 import connectToDatabase from './db/connectToDatabase.js';
+import dotenv from 'dotenv';
 
-connectToDatabase();
+dotenv.config();
+
+connectToDatabase()
+    .then(() => {})
+    .catch((error) => {
+        console.error('Error while connecting to db: ', error);
+    });

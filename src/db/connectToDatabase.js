@@ -1,5 +1,3 @@
-import dotenv from 'dotenv';
-dotenv.config();
 import mongoose from 'mongoose';
 import * as constants from '../constants.js';
 
