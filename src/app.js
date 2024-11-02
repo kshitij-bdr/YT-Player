@@ -17,10 +17,12 @@ app.use(express.urlencoded({ limit: constants.LIMIT, extended: true }));
 app.use(express.static('public'));
 app.use(cookieParser());
 
-app.get('/', (req, res) => {
-    res.send('<h1>Running...</h1>');
-});
+//import routes
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server is running on port ${process.env.PORT}`);
-});
+import userRoutes from './routes/user.routes.js';
+
+//routes declaration
+
+app.use('/api/v1/users', userRoutes);
+
+export { app };
